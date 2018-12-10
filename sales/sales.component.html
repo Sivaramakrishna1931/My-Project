@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <thead style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">
+    <td>S.no</td>
+    <td>Medicine</td>
+    <td>Usage</td>
+    <td>Quantity</td>
+    <td>PurchasedPrice</td>
+    <td>SellingPrice</td>
+    <td>Profit</td>
+    </thead>
+  <tr *ngFor="let i of data , let n=index;">
+    <td>{{n}}</td>
+    <td>{{i.Medicine}}</td>
+    <td>{{i.Usage}}</td>
+    <td>{{i.Quantity}}</td>
+    <td>{{i.PurchasedPrice}}</td>
+    <td>{{i.SellingPrice}}</td>
+    <td>{{i.Profit}}</td>
+    </tr>
+
+  
+</table>

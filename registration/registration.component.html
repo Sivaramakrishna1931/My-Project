@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-6 offset-3 jumbotron">
+        <h3 class="text-center text-grey"><i class="fas fa-user-plus fa-5x"></i></h3>
+     <h1 class="display-4 text-grey text-center"><b>Registration</b></h1>
+      <form #a88="ngForm"(ngSubmit)="onSubmit(a88.value)">
+        <div class="form-group">
+          <label for="1"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Username</label>
+          <input type="text" name="user" [(ngModel)]="user" class="form-control" placeholder="username" id="1" #use="ngModel" required>
+        </div>
+        <label *ngIf="use.touched&&use.invalid" class="text-danger"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Enter username</label>
+        <div class="form-group">
+            <label for="2"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Password</label>
+            <input type="password" name="password" [(ngModel)]="password" class="form-control" placeholder="*******" id="2"#pass="ngModel" required minlength="6">
+          </div>
+          <label *ngIf="pass.touched&&pass.invalid&&pass.errors?.minlength" class="text-danger">At least 6 characters required</label>
+          <div class="form-group">
+              <label style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Re-Enter Password</label>
+              <input type="password" name="pwd" [(ngModel)]="pwd" class="form-control" placeholder="*******" #pas1="ngModel" required Minmum Password Length Should be ="6">
+            </div>
+            <label *ngIf="pas1.value!=pass.value&&pas1.touched" class="text-danger">Password mis-match</label>
+            <div class="form-group">
+              <label for="e"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">E-mail</label>
+              <input type="text" name="mail" [(ngModel)]="mail" class="form-control" placeholder="yourname@example.com" id="e" #m="ngModel" required pattern=".*[@gmail.com]{10}">
+            </div>
+            <label *ngIf="m.touched&&m.invalid" class="text-danger">This field cant be empty</label>
+            <label *ngIf="m.errors?.pattern&&m.dirty" class="text-danger"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">*pls enter valid email</label>
+            <div class="form-group">
+              <label for="ph"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Phone</label>
+              <input type="number" name="mobile" placeholder="123456789" [(ngModel)]="mobile" #p="ngModel" id="ph"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary" value="submit"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Register</button>
+              </div>
+              <div class="col-sm-6">
+    
+                <p>Already Existing User?
+                </p>
+                <p >You can Login here :<a routerLink="/mainpage/signin">Login</a></p>
+              </div>
+            </div>
+           
+          
+
+          </form>
+     
+    
+    </div>
+  </div>

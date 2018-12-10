@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-sm-6 offset-3 jumbotron">
+      <h3 class="text-center text-primary"><i class="fas fa-user-lock fa-5x"></i></h3>
+    <h1 class="display-4 text-primary text-center"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"><b>Login</b></h1>
+    <form #a="ngForm"(ngSubmit)="onSubmit(a.value)">
+      <div class="row">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="1" style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"><b>Username</b> </label>
+                <div class="inputgroup">
+                    <div class="input-group-append">
+                      <label class="input-group-text" for="1">
+                          <h3 class=""><i class="fas fa-user fas-0.5x"></i></h3>
+                      </label>
+                <input type="text"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;" name="user" [(ngModel)]="user" class="form-control" placeholder="username" id="1" #use="ngModel" required>
+              </div>
+            </div>
+              </div>
+              <label *ngIf="use.touched&&use.invalid" class="text-danger"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">This field cant be empty</label>
+              <div class="form-group">
+                  <label for="2"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"><b>Password</b></label>
+                  <div class="inputgroup">
+                      <div class="input-group-append">
+                        <label class="input-group-text" for="1">
+                            <h3 class=""><i class="fas fa-key"></i></h3>
+                        </label>
+                  <input type="password" style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;" name="password" [(ngModel)]="password" class="form-control" placeholder="*******" id="2" #pas="ngModel" required minlength="6">
+                </div>
+              </div>
+                </div>
+                <label *ngIf="pas.touched&&pas.invalid&&pas.errors?.minlength" class="text-danger"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size:20px;font-weight: 400;">At least 6 characters required</label><br>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary mx-auto d-block" style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"(click)="submit(use.value,pas.value)">Login</button>
+                  </div>
+                  <div class="col-sm-6">
+                      
+                      <p>New user?
+                      </p>
+                      <p>You can Register here<a routerLink="/mainpage/register">Signup</a></p>
+                   
+                    </div>
+                    
+              </div>
+        <div class="col-sm-2"></div>
+            </div>
+      </div> 
+    </form>
+    
+  </div>
+</div>

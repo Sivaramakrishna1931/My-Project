@@ -1,0 +1,19 @@
+<table class=" table table-bordered text-center mt-5">
+  <thead class="thead-dark">
+      <th>S.no</th>
+      <th>Medicine</th>
+      <th>Usage</th>
+      <th>Quantity</th>
+      <th>Price</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of obj, let in=index;">
+      <td>{{in}}</td>
+      <td>{{i.Medicine}}</td>
+      <td>{{i.Usage}}</td>
+      <td>{{i.Quantity}}</td>
+      <td>{{i.Price}}</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,61 @@
+
+
+<button type="button" class="btn btn-success mx-auto d-block" data-toggle="modal" data-target="#id">Add Company</button>
+<div class="modal fade" id="id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form #ref="ngForm">
+              <label style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Company Name</label>
+              <input type="text" class="form-control" name="Company"  [(ngModel)]="Company" style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"><br>
+              <label style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Medicines</label>
+              <input type="text" name="drug" class="form-control" [(ngModel)]="drug" style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;"><br>
+              <label style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">Location</label>
+              <input type="text" name="location" class="form-control"[(ngModel)]="location"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;" ><br>
+              <label style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;">E-mail</label>
+              <input type="text"class="form-control" name="Mail" [(ngModel)]="Mail"style="font-size: 17px; font-weight: 400;font-family:Segoe UI;font-size: 24px;font-weight: 400;" >
+
+            </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<table class="table table-bordered text-center mt-2">
+    <thead class="thead-dark">
+      <td>S.no</td>
+      <td>Company</td>
+      <td>Medicines</td>
+      <td>Location</td>
+      <td>Email</td>
+      <td>Delete</td>
+      <td>Edit</td>
+      </thead>
+    <tr *ngFor="let i of data , let in=index;">
+      <td>{{in}}</td>
+      <td>{{i.Company}}</td>
+      <td>{{i.Medicines}}</td>
+      <td>{{i.Location}}</td>
+      <td>{{i.Email}}</td>
+      <td><button type="button" class="btn btn-danger"(click)="del()">Delete</button></td>
+      <td><button type="button" class="btn btn-muted">Edit</button></td>
+      </tr>
+  
+    
+  </table>

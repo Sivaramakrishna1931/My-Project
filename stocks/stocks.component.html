@@ -1,0 +1,24 @@
+
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <td>S.no</td>
+    <td>MedicineName</td>
+    <td>Usage</td>
+    <td>Quantity</td>
+    <td>price</td>
+    <td>Delete</td>
+    <td>Edit</td>
+    </thead>
+  <tr *ngFor="let i of data;let in=index;">
+    <td>{{in}}</td>
+    <td>{{i.MedicineName}}</td>
+    <td>{{i.Usage}}</td>
+    <td>{{i.Quantity}}</td>
+    <td>{{i.price}}</td>
+    <td><button type="button" class="btn btn-danger"(click)="remove(in)">X</button></td>
+    <td><button type="button" class="btn btn-muted">Edit</button></td>
+    </tr>
+
+  
+</table>
